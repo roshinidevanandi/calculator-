@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div">
+      <form id="form" Onsubmit="evaluation(event)">
+        <input type="text" id="ip1" /><br /><br />
+        <input type="button" id="on" value=" on " Onclick="input(event)" />
+        <input type="button" id="mrc" value="mrc" Onclick="input(event)" />
+        <input type="button" id="mm"value=" M-" Onclick="input(event)" />
+        <input type="button" id="mp"value=" M+" Onclick="input(event)" /><br /><br />
+        <input type="button" id="off"value=" off " Onclick="input(event)" />
+        <input type="button" id="dot" value="   .  " Onclick="input(event)"/>
+        <input type="button" id="mod" value=" % " Onclick="input(event)" />
+        <input
+          type="button"
+          id="dev"
+          value="   /  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  7  " Onclick="input(event)" />
+        <input type="button" value="  8  " Onclick="input(event)" />
+        <input type="button" value="  9 " Onclick="input(event)" />
+        <input type="button" id="star" value="  *  " Onclick="input(event)" /><br /><br />
+        <input type="button" value="  4  " Onclick="input(event)" />
+        <input type="button" value="  5  " Onclick="input(event)" />
+        <input type="button" value="  6 " Onclick="input(event)" />
+        <input
+          type="button"
+          id="min"
+          value="   -  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  1  " Onclick="input(event)" />
+        <input type="button" value="  2  " Onclick="input(event)" />
+        <input type="button" value="  3 " Onclick="input(event)" />
+        <input
+          type="button"
+          id="plus"
+          value="  +  "
+          Onclick="input(event)"
+        /><br /><br />
+        <input type="button" value="  0  " Onclick="input(event)" />
+        <input type="button" value=" 00 " Onclick="input(event)" />
+        <input type="submit" id="equal" value="  = " />
+        <input type="button" id="ac" value=" AC" Onclick="input(event)" />
+        <br /><br />
+      </form>
+    </div>
+    <p id="op"></p>
+    <script>
+      let op = document.getElementById("op");
+      let form = document.getElementById("form");
+      form.style.padding = "18px";
+      let display = document.getElementById("ip1");
+      display.style.backgroundColor = "lightgreen";
+      display.style.height = "50px";
+      display.style.width = "159px";
+      let div = document.getElementById("div");
+      div.style.border = "solid 2px";
+      div.style.height = "320px";
+      div.style.width = "205px";
+      div.style.backgroundColor = "gray";
+      div.style.borderRadius = "20px";
+      div.style.margin = "auto";
+      let on = document.getElementById("on");
+      on.style.borderRadius = "100px";
+      on.style.backgroundColor="orange";
+      on.style.border="none";
+      let mrc=document.getElementById("mrc");
+      mrc.style.backgroundColor="aqua";
+      mrc.style.border="none";
+      let mm=document.getElementById("mm");
+      mm.style.backgroundColor="pink";
+      mm.style.border="none";
+      let mp=document.getElementById("mp");
+      mp.style.backgroundColor="yellow";
+      mp.style.border="none";
+      let off=document.getElementById("off");
+      off.style.backgroundColor="yellow"
+      off.style.border="none";
+      let dot=document.getElementById("dot");
+      dot.style.backgroundColor="pink";
+      dot.style.border="none";
+      let mod=document.getElementById("mod");
+      mod.style.backgroundColor="aqua";
+      mod.style.border="none";
+      let dev=document.getElementById("dev");
+      dev.style.backgroundColor="orange";
+      dev.style.border="none";
+      let star=document.getElementById("star");
+      star.style.backgroundColor="aqua";
+      star.style.border="none";
+      let min=document.getElementById("min");
+      min.style.backgroundColor="pink";
+      min.style.border="none";
+      let plus=document.getElementById("plus");
+      plus.style.backgroundColor="yellow";
+      plus.style.border="none";
+      let ac=document.getElementById("ac");
+      ac.style.backgroundColor="orange";
+      ac.style.border="none";
+      let equal=document.getElementById("equal");
+      equal.style.backgroundColor="lightgreen";
+      equal.style.border="none";
+      function evaluation(event) {
+        event.preventDefault();
+        let res = eval(display.value);
+        display.value = res;
+      }
+      function input(event) {
+        display.value += event.target.value;
+      }
+    </script>
+  </body>
+</html>
